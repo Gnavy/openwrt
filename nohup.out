@@ -1,0 +1,87 @@
+make[1]: Entering directory '/home/ubuntu/lede'
+make[2]: Entering directory '/home/ubuntu/lede'
++ mkdir -p /home/ubuntu/lede/staging_dir/target-mipsel_24kc_musl
++ cd /home/ubuntu/lede/staging_dir/target-mipsel_24kc_musl
++ mkdir -p bin lib stamp usr/include usr/lib
+mkdir -p /home/ubuntu/lede/build_dir/target-mipsel_24kc_musl/stamp
+touch /home/ubuntu/lede/staging_dir/target-mipsel_24kc_musl/.prepared
++ mkdir -p /home/ubuntu/lede/staging_dir/host
++ cd /home/ubuntu/lede/staging_dir/host
++ mkdir -p bin lib stamp usr/include usr/lib
+mkdir -p /home/ubuntu/lede/build_dir/host/stamp /home/ubuntu/lede/staging_dir/host/include/sys
+install -m0644 /home/ubuntu/lede/tools/include/*.h /home/ubuntu/lede/staging_dir/host/include/
+install -m0644 /home/ubuntu/lede/tools/include/sys/*.h /home/ubuntu/lede/staging_dir/host/include/sys/
+ln -snf lib /home/ubuntu/lede/staging_dir/host/lib64
+touch /home/ubuntu/lede/staging_dir/host/.prepared
+make[3]: Entering directory '/home/ubuntu/lede/tools/flock'
+make[3]: Leaving directory '/home/ubuntu/lede/tools/flock'
+time: tools/flock/compile#0.04#0.01#0.06
+make[3]: Entering directory '/home/ubuntu/lede/tools/xz'
+make[3]: Leaving directory '/home/ubuntu/lede/tools/xz'
+time: tools/xz/compile#0.05#0.02#0.11
+make[3]: Entering directory '/home/ubuntu/lede/tools/sed'
+make[3]: Leaving directory '/home/ubuntu/lede/tools/sed'
+time: tools/sed/compile#0.06#0.02#0.10
+make[3]: Entering directory '/home/ubuntu/lede/tools/tar'
+make[3]: Leaving directory '/home/ubuntu/lede/tools/tar'
+time: tools/tar/compile#0.06#0.02#0.11
+make[3]: Entering directory '/home/ubuntu/lede/tools/patch'
+make[3]: Leaving directory '/home/ubuntu/lede/tools/patch'
+time: tools/patch/compile#0.05#0.01#0.09
+make[3]: Entering directory '/home/ubuntu/lede/tools/m4'
+make[3]: Leaving directory '/home/ubuntu/lede/tools/m4'
+time: tools/m4/compile#0.05#0.04#0.13
+make[3]: Entering directory '/home/ubuntu/lede/tools/autoconf'
+make[3]: Leaving directory '/home/ubuntu/lede/tools/autoconf'
+time: tools/autoconf/compile#0.04#0.01#0.08
+make[3]: Entering directory '/home/ubuntu/lede/tools/autoconf-archive'
+make[3]: Leaving directory '/home/ubuntu/lede/tools/autoconf-archive'
+time: tools/autoconf-archive/compile#0.06#0.01#0.10
+make[3]: Entering directory '/home/ubuntu/lede/tools/pkgconf'
+make[3]: Leaving directory '/home/ubuntu/lede/tools/pkgconf'
+time: tools/pkgconf/compile#0.05#0.01#0.08
+make[3]: Entering directory '/home/ubuntu/lede/tools/automake'
+make[3]: Leaving directory '/home/ubuntu/lede/tools/automake'
+time: tools/automake/compile#0.06#0.02#0.10
+make[3]: Entering directory '/home/ubuntu/lede/tools/missing-macros'
+make[3]: Leaving directory '/home/ubuntu/lede/tools/missing-macros'
+time: tools/missing-macros/compile#0.03#0.01#0.05
+make[3]: Entering directory '/home/ubuntu/lede/tools/libtool'
+make[3]: Leaving directory '/home/ubuntu/lede/tools/libtool'
+time: tools/libtool/compile#0.04#0.02#0.10
+make[3]: Entering directory '/home/ubuntu/lede/tools/flex'
+make[3]: Leaving directory '/home/ubuntu/lede/tools/flex'
+time: tools/flex/compile#0.05#0.02#0.08
+make[3]: Entering directory '/home/ubuntu/lede/tools/bison'
+make[3]: Leaving directory '/home/ubuntu/lede/tools/bison'
+time: tools/bison/compile#0.05#0.04#0.12
+make[3]: Entering directory '/home/ubuntu/lede/tools/bc'
+make[3]: Leaving directory '/home/ubuntu/lede/tools/bc'
+time: tools/bc/compile#0.04#0.02#0.08
+make[3]: Entering directory '/home/ubuntu/lede/tools/libressl'
+make[3]: Leaving directory '/home/ubuntu/lede/tools/libressl'
+time: tools/libressl/compile#0.07#0.06#0.19
+make[3]: Entering directory '/home/ubuntu/lede/tools/ninja'
+cd /home/ubuntu/lede/build_dir/host/ninja-1.10.2 && CXX="g++" CXXFLAGS=" -I/home/ubuntu/lede/staging_dir/host/include " LDFLAGS="-L/home/ubuntu/lede/staging_dir/host/lib " /home/ubuntu/lede/staging_dir/host/bin/python3 configure.py --bootstrap 
+[1/30] CXX build/browse.o
+[2/30] CXX build/build_log.o
+ninja: build stopped: interrupted by user.
+bootstrapping ninja...
+warning: A compatible version of re2c (>= 0.11.3) was not found; changes to src/*.in.cc will not affect your build.
+wrote build.ninja.
+bootstrap complete.  rebuilding...
+Traceback (most recent call last):
+  File "configure.py", line 719, in <module>
+    subprocess.check_call(rebuild_args)
+  File "/usr/lib/python3.8/subprocess.py", line 364, in check_call
+    raise CalledProcessError(retcode, cmd)
+subprocess.CalledProcessError: Command '['./ninja']' returned non-zero exit status 2.
+make[3]: *** [Makefile:40: /home/ubuntu/lede/build_dir/host/ninja-1.10.2/.built] Error 1
+make[3]: Leaving directory '/home/ubuntu/lede/tools/ninja'
+time: tools/ninja/compile#32.72#2.31#751.19
+    ERROR: tools/ninja failed to build.
+make[2]: *** [tools/Makefile:162: tools/ninja/compile] Error 1
+make[2]: Leaving directory '/home/ubuntu/lede'
+make[1]: *** [tools/Makefile:158: /home/ubuntu/lede/staging_dir/host/stamp/.tools_compile_yyynyynnyyyynyyyyyynyynyyynynyyyyyyyyyyyyyyyyyynynnyyyyyyyyyy] Error 2
+make[1]: Leaving directory '/home/ubuntu/lede'
+make: *** [/home/ubuntu/lede/include/toplevel.mk:230: world] Error 2
